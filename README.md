@@ -126,16 +126,7 @@ A mesma lógica do firmware foi executada para um **dia de referência de 24h** 
 | **Economia no dia** | **R$ 24,05 (59 %)** |
 | **CO₂ evitado no dia** | **3,19 kg** |
 
-### Geração solar × demanda × carga da bateria
-![Geração, demanda e bateria](assets/grafico_geracao_demanda.png)
-
-### De onde vem a energia que carrega o carro (hora a hora)
-![Fontes de energia](assets/grafico_fontes_energia.png)
-
 A bateria, carregada pelo excedente solar do meio-dia, assume a recarga das **18h–19h (ponta)** e evita a rede cara justamente quando ela é mais cara.
-
-### Custo e CO₂ evitados
-![Custo e CO2](assets/grafico_custo_co2.png)
 
 > Valores de tarifa e fator de emissão são ilustrativos e parametrizáveis no topo do firmware e do script. A finalidade da PoC é comprovar a **lógica e a viabilidade técnica**, não cravar números regulatórios.
 
@@ -160,7 +151,7 @@ A bateria, carregada pelo excedente solar do meio-dia, assume a recarga das **18
 pip install matplotlib
 python3 simulacao_24h.py
 ```
-Gera o CSV e os três gráficos em `assets/`.
+Gera o dataset `dados_simulacao_24h.csv`.
 
 ---
 
@@ -174,10 +165,6 @@ Gera o CSV e os três gráficos em `assets/`.
 ├── libraries.txt                 # dependências (LiquidCrystal I2C)
 ├── simulacao_24h.py              # simulação de 24h (mesma lógica) -> dados + gráficos
 ├── dados_simulacao_24h.csv       # dataset gerado (prova de conceito)
-├── assets/
-│   ├── grafico_geracao_demanda.png
-│   ├── grafico_fontes_energia.png
-│   └── grafico_custo_co2.png
 └── README.md
 ```
 
