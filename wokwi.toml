@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "eletroposto_inteligente.ino"
+elf = "eletroposto_inteligente.ino.elf"

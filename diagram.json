@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "author": "EV Challenge 2026 - Eletroposto Inteligente",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+
+    { "type": "wokwi-lcd1602", "id": "lcd", "top": -150, "left": 200,
+      "attrs": { "pins": "i2c" } },
+
+    { "type": "wokwi-potentiometer", "id": "potSolar", "top": 120, "left": -180,
+      "attrs": { "value": "2800" } },
+    { "type": "wokwi-potentiometer", "id": "potDem", "top": 250, "left": -180,
+      "attrs": { "value": "3000" } },
+
+    { "type": "wokwi-pushbutton", "id": "btnCarro", "top": 130, "left": 230,
+      "attrs": { "color": "green", "label": "CARRO" } },
+    { "type": "wokwi-pushbutton", "id": "btnPausa", "top": 250, "left": 230,
+      "attrs": { "color": "blue", "label": "PAUSA" } },
+
+    { "type": "wokwi-led", "id": "ledV", "top": 0, "left": 320,
+      "attrs": { "color": "green", "label": "LIMPA" } },
+    { "type": "wokwi-led", "id": "ledA", "top": 0, "left": 380,
+      "attrs": { "color": "yellow", "label": "BATERIA" } },
+    { "type": "wokwi-led", "id": "ledR", "top": 0, "left": 440,
+      "attrs": { "color": "red", "label": "REDE" } },
+    { "type": "wokwi-resistor", "id": "rV", "top": 70, "left": 320, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rA", "top": 70, "left": 380, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rR", "top": 70, "left": 440, "attrs": { "value": "220" } },
+
+    { "type": "wokwi-buzzer", "id": "bz", "top": 350, "left": 230, "attrs": { "volume": "0.1" } }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+
+    [ "esp:3V3", "lcd:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.1", "lcd:GND", "black", [ "v0" ] ],
+    [ "esp:D21", "lcd:SDA", "green", [ "v0" ] ],
+    [ "esp:D22", "lcd:SCL", "blue", [ "v0" ] ],
+
+    [ "esp:3V3", "potSolar:VCC", "red", [ "h0" ] ],
+    [ "esp:GND.1", "potSolar:GND", "black", [ "h0" ] ],
+    [ "esp:D34", "potSolar:SIG", "orange", [ "h0" ] ],
+
+    [ "esp:3V3", "potDem:VCC", "red", [ "h0" ] ],
+    [ "esp:GND.1", "potDem:GND", "black", [ "h0" ] ],
+    [ "esp:D35", "potDem:SIG", "orange", [ "h0" ] ],
+
+    [ "esp:D25", "btnCarro:1.l", "green", [ "h0" ] ],
+    [ "esp:GND.2", "btnCarro:2.l", "black", [ "h0" ] ],
+    [ "esp:D26", "btnPausa:1.l", "blue", [ "h0" ] ],
+    [ "esp:GND.2", "btnPausa:2.l", "black", [ "h0" ] ],
+
+    [ "esp:D4", "rV:1", "green", [ "v0" ] ],
+    [ "rV:2", "ledV:A", "green", [ "v0" ] ],
+    [ "ledV:C", "esp:GND.3", "black", [ "v0" ] ],
+
+    [ "esp:D5", "rA:1", "yellow", [ "v0" ] ],
+    [ "rA:2", "ledA:A", "yellow", [ "v0" ] ],
+    [ "ledA:C", "esp:GND.3", "black", [ "v0" ] ],
+
+    [ "esp:D2", "rR:1", "red", [ "v0" ] ],
+    [ "rR:2", "ledR:A", "red", [ "v0" ] ],
+    [ "ledR:C", "esp:GND.3", "black", [ "v0" ] ],
+
+    [ "esp:D15", "bz:1", "purple", [ "h0" ] ],
+    [ "esp:GND.2", "bz:2", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
