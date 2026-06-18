@@ -172,8 +172,12 @@ Gera o dataset `dados_simulacao_24h.csv`.
 
 ## 👥 Equipe
 
-| Nome | RM |
-|---|---|
-| _preencher_ | _RM_ |
+|Nome - RM|
+Mauricio Bertuci Saletti - RM571229
+Mateus Eduardo da Cruz Rocha - RM570736
+Lucas Caram Bueno - RM570158
+Rhuan Pacheco Carreri - RM570129
+Leonardo Fortini Marcelo - RM572566
+Nicolas Andrade Rodrigues - RM572782
 
 **FIAP — EV Challenge 2026 · Sprint 2 — Prova de Conceito Funcional**
